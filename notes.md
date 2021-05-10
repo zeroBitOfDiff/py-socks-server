@@ -53,3 +53,11 @@
 > DST.PORT 
 * desired destination port in network octet order
 
+> As soon as server establishes a connection to the desired destination it should reply with a status and remote address.
+* version
+* rep 
+* rsv
+* atyp
+* bnd.addr
+* bnd.port
+
