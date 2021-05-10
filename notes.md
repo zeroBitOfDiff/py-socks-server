@@ -84,3 +84,8 @@
 * server bound address
 > BND.PORT 
 * server bound port in network octet order
+
+> Now we can test it using curl:
+```
+ curl -v  --socks5 127.0.0.1:9011 -U username:password https://github.com
+```

@@ -118,7 +118,25 @@ class SocksProxy(StreamRequestHandler):
         self.server.close_request(self.request)
         return False
 
+    def generate_failed_reply(self, address_type, error_number):
+        return struct.pack("!BBBBIH", SOCKS_VERSION, error_number, 0, address_type, 0, 0)
 
+    def exchange_loop(self, client, remote):
+
+        while True:
+
+            # wait until client or remote is available for read
+            r, w, e = select.select([client, remote], [], [])
+
+            if client in r:
+                data = client.recv(4096)
+                if remote.send(data) <= 0:
+                    break
+
+            if remote in r:
+                data = remote.recv(4096)
+                if client.send(data) <= 0:
+                    break
 
 if __name__ == '__main__':
     with ThreadingTCPServer(('127.0.0.1', 9011), SocksProxy) as server:
