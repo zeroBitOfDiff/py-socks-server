@@ -61,3 +61,26 @@
 * bnd.addr
 * bnd.port
 
+> VER protocol version: 
+* X'05'
+> REP Reply field:
+* '00' succeeded
+* '01' general SOCKS server failure
+* '02' connection not allowed by ruleset
+* '03' Network unreachable
+* '04' Host unreachable
+* '05' Connection refused
+* '06' TTL expired
+* '07' Command not supported
+* '08' Address type not supported
+* '09' to X'FF' unassigned
+> RSV 
+* RESERVED
+> ATYP address type of following address
+* IP V4 address: '01'
+* DOMAINNAME: '03'
+* IP V6 address: '04'
+> BND.ADDR 
+* server bound address
+> BND.PORT 
+* server bound port in network octet order
