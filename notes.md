@@ -28,3 +28,28 @@
 
 > The status field of 0 indicates a successful authorization
 
+> Once the authorization has completed the client can send request details.
+* version
+* cmd
+* rsv
+* atyp
+* dst.addr
+* dst.port
+
+> VERSION protocol version: 
+* '05'
+> CMD
+* CONNECT '01'
+* BIND '02'
+* UDP ASSOCIATE '03'
+> RSV 
+* RESERVED
+> ATYP address type of following address
+* IP V4 address: '01'
+* DOMAINNAME: '03'
+* IP V6 address: '04'
+> DST.ADDR 
+* desired destination address
+> DST.PORT 
+* desired destination port in network octet order
+
