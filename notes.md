@@ -12,3 +12,19 @@
 * '03' to X'7F' IANA ASSIGNED
 * '80' to X'FE' RESERVED FOR PRIVATE METHODS
 * 'FF' NO ACCEPTABLE METHODS
+
+
+
+> Once the client has received the server choice, it responds with username and password credentials.
+* version
+* ulen
+* uname
+* plen
+* passwd
+
+> server '02' response:
+* version
+* method
+
+> The status field of 0 indicates a successful authorization
+
